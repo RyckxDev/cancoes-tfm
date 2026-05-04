@@ -704,8 +704,11 @@ async function salvar(){
   const titulo=document.getElementById('f-titulo').value.trim(),cat=document.getElementById('modal-cat').value,letra=document.getElementById('f-letra').value.trim(),vis=document.getElementById('f-vis').value;
   const err=document.getElementById('err-modal');err.textContent='';
   if(!titulo||!letra)return err.textContent='Preencha o título e a letra.';
+  if(titulo.length<3)return err.textContent='⚠️ Título muito curto. Mínimo 3 caracteres.';
   if(palavraoIsolado(titulo))return err.textContent='⚠️ Título inválido.';
-  if(letra.split('\n').filter(l=>l.trim()).length<3)return err.textContent='⚠️ Mínimo 3 linhas na letra.';
+  const linhas=letra.split('\n').filter(l=>l.trim().length>0);
+  if(linhas.length<3)return err.textContent='⚠️ A letra precisa ter pelo menos 3 linhas.';
+  if(letra.trim().length<20)return err.textContent='⚠️ Letra muito curta para ser uma canção.';
   if(palavraoExcessivo(letra))return err.textContent='⚠️ Linguagem excessivamente inadequada.';
   const btn=document.getElementById('btn-salvar');btn.disabled=true;btn.textContent='Salvando...';
   const tk=sessionStorage.getItem('sb_token'),uid=sessionStorage.getItem('sb_uid');
