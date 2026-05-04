@@ -430,6 +430,22 @@ const SVG_CLOSED=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" st
 const PALAVROES=['porra','merda','caralho','puta','viado','buceta','fdp','filho da puta','vadia','arrombado','otario','otário','corno','punheta','piroca','xoxota','cacete'];
 function palavraoIsolado(t){const s=t.toLowerCase().trim();return PALAVROES.some(p=>s===p||s===p+'!'||s===p+'.'||s===p+'?')}
 function palavraoExcessivo(t){const s=t.toLowerCase();return PALAVROES.reduce((n,p)=>n+(s.match(new RegExp('\\b'+p.replace(/\s+/g,'\\s+')+'\\b','gi'))||[]).length,0)>5}
+
+function temSpam(texto){
+  // detecta caractere repetido mais de 6x seguidos (ex: AAAAAAA)
+  if(/(.)\1{5,}/i.test(texto))return true;
+  // detecta palavra repetida mais de 4x na letra inteira (ex: aaa aaa aaa aaa aaa)
+  const palavras=texto.toLowerCase().split(/\s+/).filter(p=>p.length>0);
+  const freq={};
+  for(const p of palavras){freq[p]=(freq[p]||0)+1;}
+  if(Object.values(freq).some(v=>v>4))return true;
+  // detecta linha idêntica repetida mais de 2x
+  const linhas=texto.split('\n').map(l=>l.trim().toLowerCase()).filter(l=>l);
+  const freqL={};
+  for(const l of linhas){freqL[l]=(freqL[l]||0)+1;}
+  if(Object.values(freqL).some(v=>v>2))return true;
+  return false;
+}
 function toast(msg,dur=2500){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),dur)}
 
 // ── MENU ──
@@ -706,9 +722,11 @@ async function salvar(){
   if(!titulo||!letra)return err.textContent='Preencha o título e a letra.';
   if(titulo.length<3)return err.textContent='⚠️ Título muito curto. Mínimo 3 caracteres.';
   if(palavraoIsolado(titulo))return err.textContent='⚠️ Título inválido.';
+  if(temSpam(titulo))return err.textContent='⚠️ Título inválido. Evite repetir caracteres ou palavras.';
   const linhas=letra.split('\n').filter(l=>l.trim().length>0);
   if(linhas.length<3)return err.textContent='⚠️ A letra precisa ter pelo menos 3 linhas.';
   if(letra.trim().length<20)return err.textContent='⚠️ Letra muito curta para ser uma canção.';
+  if(temSpam(letra))return err.textContent='⚠️ Letra inválida. Evite repetir caracteres, palavras ou linhas em excesso.';
   if(palavraoExcessivo(letra))return err.textContent='⚠️ Linguagem excessivamente inadequada.';
   const btn=document.getElementById('btn-salvar');btn.disabled=true;btn.textContent='Salvando...';
   const tk=sessionStorage.getItem('sb_token'),uid=sessionStorage.getItem('sb_uid');
