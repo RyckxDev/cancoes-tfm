@@ -7,16 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;min-width:0}
-html,body{overflow-x:hidden;max-width:100%}
-:root{
-  --green:#4a6741;--green-light:#6b8f62;--green-pale:#f0f4ef;--green-border:#c8d8c5;
-  --text:#1a1a1a;--text-muted:#666;--bg:#fff;--border:#e0e0e0;--radius:12px;
-  --font:'Segoe UI',system-ui,sans-serif;
-}
-body{font-family:var(--font);color:var(--text);background:var(--bg);min-height:100vh}
+html{height:100%}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:#1a1a1a;background:#fff;min-height:100%;overflow-x:hidden}
+:root{--green:#4a6741;--green-light:#6b8f62;--green-pale:#f0f4ef;--green-border:#c8d8c5;--text:#1a1a1a;--text-muted:#666;--bg:#fff;--border:#e0e0e0;--radius:12px}
 
-/* ── NAV ── */
-nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:60px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100}
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:60px;border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:100}
 .nav-left{display:flex;align-items:center;gap:10px}
 .nav-logo{display:flex;align-items:center;gap:8px;font-size:1.25rem;font-weight:600;color:var(--green);cursor:pointer;white-space:nowrap}
 .nav-links{display:flex;gap:2rem}
@@ -27,25 +23,25 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .btn-icon:hover,.btn-new:hover{opacity:.6}
 .btn-icon svg,.btn-new svg{width:26px;height:26px}
 
-/* ── HAMBURGUER ── */
+/* HAMBURGUER */
 .hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;color:var(--text)}
 .hamburger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:all .3s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* ── MENU LATERAL ── */
+/* MENU LATERAL */
 .side-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:300}
 .side-overlay.open{display:block}
-.side-menu{position:fixed;top:0;left:-100%;width:75vw;max-width:270px;height:100vh;background:var(--bg);border-right:1px solid var(--border);z-index:301;transition:left .28s cubic-bezier(.4,0,.2,1);padding:1.5rem 1rem;display:flex;flex-direction:column;gap:4px;box-shadow:6px 0 24px rgba(0,0,0,.1)}
+.side-menu{position:fixed;top:0;left:-100%;width:75vw;max-width:270px;height:100vh;background:#fff;border-right:1px solid var(--border);z-index:301;transition:left .28s cubic-bezier(.4,0,.2,1);padding:1.5rem 1rem;display:flex;flex-direction:column;gap:4px;box-shadow:6px 0 24px rgba(0,0,0,.1)}
 .side-menu.open{left:0}
 .side-logo{display:flex;align-items:center;gap:8px;font-size:1.05rem;font-weight:600;color:var(--green);margin-bottom:1.25rem;padding:0 .5rem}
-.side-item{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:10px;font-size:.9rem;color:var(--text-muted);cursor:pointer;transition:background .18s,color .18s;border:none;background:none;width:100%;text-align:left;font-family:var(--font)}
+.side-item{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:10px;font-size:.9rem;color:var(--text-muted);cursor:pointer;transition:background .18s,color .18s;border:none;background:none;width:100%;text-align:left;font-family:'Segoe UI',system-ui,sans-serif}
 .side-item:hover{background:var(--green-pale);color:var(--green)}
 .side-item.active{background:var(--green-pale);color:var(--green);font-weight:600}
 .side-divider{height:1px;background:var(--border);margin:.5rem 0}
 
-/* ── PAGES ── */
+/* PAGES */
 .page{display:none;padding:2.5rem;overflow-x:hidden}
 .page.active{display:block}
 .hero{max-width:700px;margin:0 auto 2rem}
@@ -58,7 +54,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .feature-card h3{font-size:.9rem;font-weight:600;margin-bottom:.25rem}
 .feature-card p{font-size:.8rem;color:var(--text-muted);line-height:1.5}
 .toolbar{display:flex;gap:1rem;max-width:700px;margin:0 auto 1.5rem}
-.toolbar input,.toolbar select{flex:1;padding:8px 14px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;font-family:var(--font);background:var(--bg);color:var(--text);outline:none;transition:border .2s}
+.toolbar input,.toolbar select{flex:1;padding:8px 14px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;background:#fff;color:var(--text);outline:none;transition:border .2s}
 .toolbar input:focus,.toolbar select:focus{border-color:var(--green)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;max-width:700px;margin:0 auto}
 .card{border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;cursor:pointer;transition:box-shadow .2s,border-color .2s;overflow:hidden}
@@ -75,12 +71,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .public-badge{background:#e8f5e9;color:#2e7d32}
 .private-badge{background:#fff3e0;color:#e65100}
 
-/* ── MODAIS ── */
+/* MODAIS */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:center;justify-content:center}
 .modal-overlay.open{display:flex}
-.modal{background:var(--bg);border-radius:var(--radius);padding:2rem;width:100%;max-width:520px;max-height:85vh;overflow-y:auto;overflow-x:hidden;position:relative}
+.modal{background:#fff;border-radius:var(--radius);padding:2rem;width:100%;max-width:520px;max-height:85vh;overflow-y:auto;overflow-x:hidden;position:relative}
 .modal label{font-size:.8rem;font-weight:500;color:var(--text-muted);display:block;margin-bottom:4px;margin-top:1rem}
-.modal input,.modal textarea,.modal select{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;font-family:var(--font);background:var(--bg);color:var(--text);outline:none;transition:border .2s;resize:vertical}
+.modal input,.modal textarea,.modal select{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;background:#fff;color:var(--text);outline:none;transition:border .2s;resize:vertical}
 .modal input:focus,.modal textarea:focus,.modal select:focus{border-color:var(--green)}
 .modal textarea{min-height:160px}
 .modal-actions{display:flex;gap:.75rem;margin-top:1.5rem;justify-content:flex-end}
@@ -89,26 +85,69 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .btn-save:hover{background:var(--green-light)}
 .btn-save:disabled{opacity:.5;cursor:not-allowed}
 
-/* ── MODAL DETALHE ── */
+/* MODAL DETALHE */
 .det-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
 .det-topbar button{background:none;border:none;cursor:pointer;color:var(--text-muted);width:28px;height:28px;display:flex;align-items:center;justify-content:center;padding:0}
 .det-topbar button:hover{color:var(--text)}
 #btn-lock{display:none}
-#btn-lock.locked{color:var(--green)}
 .detail-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap}
 .detail-meta span{font-size:.8rem;color:var(--text-muted)}
 .detail-lyrics{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#000;background:#fff;letter-spacing:1.5px;padding:.5rem 0;word-break:break-word;overflow-wrap:break-word}
 .detail-lyrics p{margin:0;line-height:1.5;white-space:normal}
 .detail-lyrics p+p{margin-top:.9rem}
 
-/* ── MODO LEITURA ── */
-#modal-detalhe.leitura .modal{position:fixed;inset:0;margin:0;border-radius:0;max-height:100vh;height:100vh;width:100vw;max-width:100vw;overflow-y:auto;overflow-x:hidden;padding:1rem}
-#modal-detalhe.leitura .detail-lyrics{font-size:1.3rem;letter-spacing:2px}
-#modal-detalhe.leitura .detail-lyrics p+p{margin-top:1.2rem}
-#modal-detalhe.leitura.locked .modal>*:not(.det-topbar){pointer-events:none;user-select:none}
-#modal-detalhe.leitura.locked .modal{overflow:hidden}
+/* ══════════════════════════════
+   MODO LEITURA — página separada
+   ══════════════════════════════ */
+#leitura-page{
+  display:none;
+  position:fixed;
+  top:0;left:0;right:0;bottom:0;
+  z-index:9999;
+  background:#fff;
+  /* NÃO TEM overflow aqui — o scroll fica no filho */
+}
+#leitura-page.active{display:flex;flex-direction:column}
 
-/* ── PERFIL ── */
+#leitura-topbar{
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.875rem 1rem;
+  background:#fff;
+  border-bottom:1px solid #e0e0e0;
+}
+#leitura-topbar button{
+  background:none;border:none;cursor:pointer;
+  color:#666;
+  width:32px;height:32px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+
+/* Este é o único elemento com overflow — filho direto do flex */
+#leitura-scroll{
+  flex:1 1 0;
+  min-height:0; /* CRÍTICO para flex+scroll funcionar */
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  padding:1.25rem;
+}
+
+#leitura-lyrics{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.3rem;
+  font-weight:800;
+  color:#000;
+  letter-spacing:2px;
+  word-break:break-word;
+  padding-bottom:4rem;
+}
+#leitura-lyrics p{margin:0;line-height:1.5}
+#leitura-lyrics p+p{margin-top:1.2rem}
+
+/* PERFIL */
 .profile-header{display:flex;align-items:center;gap:1.25rem;margin-bottom:2rem}
 .avatar{width:56px;height:56px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:600}
 .profile-info h2{font-size:1.1rem;font-weight:600}
@@ -120,26 +159,26 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .btn-sair{background:none;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:.8rem;cursor:pointer;color:var(--text-muted)}
 .btn-sair:hover{border-color:red;color:red}
 
-/* ── LOGIN ── */
+/* LOGIN */
 .login-wrap{max-width:380px;margin:3rem auto;border:1px solid var(--border);border-radius:var(--radius);padding:2rem}
 .login-wrap h2{font-size:1.3rem;font-weight:600;margin-bottom:.5rem;text-align:center}
 .login-wrap .subtitle{font-size:.85rem;color:var(--text-muted);text-align:center;margin-bottom:1.5rem}
 .login-wrap label{font-size:.8rem;font-weight:500;color:var(--text-muted);display:block;margin-bottom:4px;margin-top:1rem}
-.login-wrap input,.login-wrap select{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;font-family:var(--font);outline:none;background:var(--bg)}
+.login-wrap input,.login-wrap select{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;outline:none;background:#fff}
 .btn-login{width:100%;margin-top:1.25rem;background:var(--green);color:#fff;border:none;border-radius:8px;padding:10px;font-size:.9rem;font-weight:500;cursor:pointer}
 .btn-login:hover{background:var(--green-light)}
 .btn-login:disabled{opacity:.5;cursor:not-allowed}
 .login-toggle{text-align:center;margin-top:1rem;font-size:.85rem;color:var(--text-muted)}
 .login-toggle a{color:var(--green);cursor:pointer;font-weight:500}
 
-/* ── MISC ── */
+/* MISC */
 .empty{text-align:center;padding:3rem;color:var(--text-muted);font-size:.9rem}
-.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:10px 20px;border-radius:8px;font-size:.875rem;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:10px 20px;border-radius:8px;font-size:.875rem;z-index:99999;opacity:0;transition:opacity .3s;pointer-events:none}
 .toast.show{opacity:1}
 .loading{text-align:center;padding:2rem;color:var(--text-muted);font-size:.875rem}
 .err{color:#c0392b;font-size:.8rem;margin-top:.5rem;text-align:center}
 
-/* ── RESPONSIVO ── */
+/* RESPONSIVO */
 @media(max-width:640px){
   nav{padding:0 1rem;height:56px}
   .nav-links{display:none}
@@ -147,7 +186,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
   .btn-icon svg,.btn-new svg{width:22px;height:22px}
   .page{padding:1rem}
   .hero h1{font-size:1.5rem}
-  .hero p{font-size:.9rem}
   .features{grid-template-columns:1fr}
   .toolbar{flex-direction:column;gap:.75rem}
   .grid{grid-template-columns:1fr}
@@ -300,27 +338,16 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
       <h2 style="font-size:1.2rem;font-weight:600;margin-bottom:.5rem">Complete seu perfil 🎖️</h2>
       <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1.5rem">Adicione seu nome de guerra e quartel.</p>
       <label style="font-size:.8rem;font-weight:500;color:var(--text-muted);display:block;margin-bottom:4px">Nome de Guerra ou Apelido</label>
-      <input type="text" id="cp-nome" placeholder="Ex: Gonçalves" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;font-family:var(--font);outline:none;margin-bottom:.75rem"/>
-      <label style="font-size:.8rem;font-weight:500;color:var(--text-muted);display:block;margin-bottom:4px">Arma</label>
-      <select id="cp-arma" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;font-family:var(--font);background:var(--bg);outline:none;margin-bottom:.75rem">
-        <optgroup label="🪖 Exército — Armas de Combate">
-          <option value="Infantaria">🔫 Infantaria</option>
-          <option value="Cavalaria">🐴 Cavalaria</option>
-          <option value="Artilharia">💥 Artilharia</option>
-          <option value="Engenharia">⚙️ Engenharia</option>
-          <option value="Comunicações">📡 Comunicações</option>
-        </optgroup>
-        <optgroup label="⚓ Marinha">
-          <option value="Marinha">⚓ Marinha</option>
-          <option value="Fuzileiros Navais">🌊 Fuzileiros Navais</option>
-        </optgroup>
-        <optgroup label="✈️ Força Aérea">
-          <option value="Força Aérea">✈️ Força Aérea Brasileira (FAB)</option>
-        </optgroup>
+      <input type="text" id="cp-nome" placeholder="Ex: Gonçalves" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;outline:none;margin-bottom:.75rem"/>
+      <label style="font-size:.8rem;font-weight:500;color:var(--text-muted);display:block;margin-bottom:4px">Arma / Força</label>
+      <select id="cp-arma" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;background:#fff;outline:none;margin-bottom:.75rem">
+        <optgroup label="🪖 Exército — Armas de Combate"><option value="Infantaria">🔫 Infantaria</option><option value="Cavalaria">🐴 Cavalaria</option><option value="Artilharia">💥 Artilharia</option><option value="Engenharia">⚙️ Engenharia</option><option value="Comunicações">📡 Comunicações</option></optgroup>
+        <optgroup label="⚓ Marinha"><option value="Marinha">⚓ Marinha</option><option value="Fuzileiros Navais">🌊 Fuzileiros Navais</option></optgroup>
+        <optgroup label="✈️ Força Aérea"><option value="Força Aérea">✈️ Força Aérea Brasileira (FAB)</option></optgroup>
         <option value="Outro">🎖️ Outro</option>
       </select>
       <label style="font-size:.8rem;font-weight:500;color:var(--text-muted);display:block;margin-bottom:4px">Quartel / Força</label>
-      <input type="text" id="cp-quartel" placeholder="Ex: 2° GAAAE" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;font-family:var(--font);outline:none;margin-bottom:.75rem"/>
+      <input type="text" id="cp-quartel" placeholder="Ex: 2° GAAAE" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.875rem;outline:none;margin-bottom:.75rem"/>
       <div class="err" id="err-completar"></div>
       <button class="btn-save" onclick="completarPerfil()" style="width:100%;padding:10px">Salvar perfil</button>
     </div>
@@ -348,20 +375,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
     <label>Senha</label><input type="password" id="c-senha" placeholder="Mínimo 6 caracteres"/>
     <label>Arma / Força</label>
     <select id="c-arma">
-      <optgroup label="🪖 Exército — Armas de Combate">
-        <option value="Infantaria">🔫 Infantaria</option>
-        <option value="Cavalaria">🐴 Cavalaria</option>
-        <option value="Artilharia">💥 Artilharia</option>
-        <option value="Engenharia">⚙️ Engenharia</option>
-        <option value="Comunicações">📡 Comunicações</option>
-      </optgroup>
-      <optgroup label="⚓ Marinha">
-        <option value="Marinha">⚓ Marinha</option>
-        <option value="Fuzileiros Navais">🌊 Fuzileiros Navais</option>
-      </optgroup>
-      <optgroup label="✈️ Força Aérea">
-        <option value="Força Aérea">✈️ Força Aérea Brasileira (FAB)</option>
-      </optgroup>
+      <optgroup label="🪖 Exército — Armas de Combate"><option value="Infantaria">🔫 Infantaria</option><option value="Cavalaria">🐴 Cavalaria</option><option value="Artilharia">💥 Artilharia</option><option value="Engenharia">⚙️ Engenharia</option><option value="Comunicações">📡 Comunicações</option></optgroup>
+      <optgroup label="⚓ Marinha"><option value="Marinha">⚓ Marinha</option><option value="Fuzileiros Navais">🌊 Fuzileiros Navais</option></optgroup>
+      <optgroup label="✈️ Força Aérea"><option value="Força Aérea">✈️ Força Aérea Brasileira (FAB)</option></optgroup>
       <option value="Outro">🎖️ Outro</option>
     </select>
     <label>Quartel / Força</label><input type="text" id="c-quartel" placeholder="Ex: 2° GAAAE"/>
@@ -416,6 +432,21 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
   </div>
 </div>
 
+<!-- MODO LEITURA (página separada, fora de qualquer modal) -->
+<div id="leitura-page">
+  <div id="leitura-topbar">
+    <button id="btn-fechar-leitura" onclick="closeLeitura()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button id="leitura-lock-btn" onclick="toggleLeituraLock()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+    </button>
+  </div>
+  <div id="leitura-scroll">
+    <div id="leitura-lyrics"></div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -430,42 +461,27 @@ const SVG_CLOSED=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" st
 const PALAVROES=['porra','merda','caralho','puta','viado','buceta','fdp','filho da puta','vadia','arrombado','otario','otário','corno','punheta','piroca','xoxota','cacete'];
 function palavraoIsolado(t){const s=t.toLowerCase().trim();return PALAVROES.some(p=>s===p||s===p+'!'||s===p+'.'||s===p+'?')}
 function palavraoExcessivo(t){const s=t.toLowerCase();return PALAVROES.reduce((n,p)=>n+(s.match(new RegExp('\\b'+p.replace(/\s+/g,'\\s+')+'\\b','gi'))||[]).length,0)>5}
-
 function temSpam(texto){
   // detecta caractere repetido mais de 6x seguidos (ex: AAAAAAA)
   if(/(.)\1{5,}/i.test(texto))return true;
-  // detecta palavra repetida mais de 4x na letra inteira (ex: aaa aaa aaa aaa aaa)
-  const palavras=texto.toLowerCase().split(/\s+/).filter(p=>p.length>0);
+  // detecta palavra repetida mais de 5x — ignora palavras curtas (artigos, x2, etc)
+  const palavras=texto.toLowerCase().split(/\s+/).filter(p=>p.length>3);
   const freq={};
   for(const p of palavras){freq[p]=(freq[p]||0)+1;}
-  if(Object.values(freq).some(v=>v>4))return true;
-  // detecta linha idêntica repetida mais de 2x
-  const linhas=texto.split('\n').map(l=>l.trim().toLowerCase()).filter(l=>l);
+  if(Object.values(freq).some(v=>v>5))return true;
+  // detecta linha idêntica repetida mais de 3x
+  const linhas=texto.split('\n').map(l=>l.trim().toLowerCase()).filter(l=>l.length>3);
   const freqL={};
   for(const l of linhas){freqL[l]=(freqL[l]||0)+1;}
-  if(Object.values(freqL).some(v=>v>2))return true;
+  if(Object.values(freqL).some(v=>v>3))return true;
   return false;
 }
 function toast(msg,dur=2500){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),dur)}
 
 // ── MENU ──
-function toggleMenu(){
-  document.getElementById('hamburger').classList.toggle('open');
-  document.getElementById('side-menu').classList.toggle('open');
-  document.getElementById('side-overlay').classList.toggle('open');
-}
-function closeMenu(){
-  document.getElementById('hamburger').classList.remove('open');
-  document.getElementById('side-menu').classList.remove('open');
-  document.getElementById('side-overlay').classList.remove('open');
-}
-function menuGoPage(p){
-  closeMenu();
-  goPage(p);
-  document.querySelectorAll('.side-item').forEach(a=>a.classList.remove('active'));
-  const el=document.getElementById('side-'+p);
-  if(el)el.classList.add('active');
-}
+function toggleMenu(){document.getElementById('hamburger').classList.toggle('open');document.getElementById('side-menu').classList.toggle('open');document.getElementById('side-overlay').classList.toggle('open');}
+function closeMenu(){document.getElementById('hamburger').classList.remove('open');document.getElementById('side-menu').classList.remove('open');document.getElementById('side-overlay').classList.remove('open');}
+function menuGoPage(p){closeMenu();goPage(p);document.querySelectorAll('.side-item').forEach(a=>a.classList.remove('active'));const el=document.getElementById('side-'+p);if(el)el.classList.add('active');}
 
 // ── AUTH ──
 async function initAuth(){
@@ -484,25 +500,9 @@ async function fazerLogin(){
   if(res.error||!res.access_token)return errEl.textContent=res.error_description||'Erro ao entrar.';
   const tk=res.access_token,uid=res.user.id;
   sessionStorage.setItem('sb_token',tk);sessionStorage.setItem('sb_uid',uid);user={id:uid};
-  // verifica se tem perfil pendente salvo do cadastro
   const pending=localStorage.getItem('pending_profile');
-  if(pending){
-    try{
-      const p=JSON.parse(pending);
-      // só usa se o email bate
-      if(p.email===email){
-        const pr=await fetch(SB_URL+'/rest/v1/usuarios',{method:'POST',headers:{...H,'Authorization':'Bearer '+tk,'Prefer':'resolution=merge-duplicates,return=representation'},body:JSON.stringify({id:uid,nome:p.nome,email:p.email,arma:p.arma,quartel_ou_forca:p.quartel_ou_forca})}).then(r=>r.json());
-        userProfile=Array.isArray(pr)&&pr[0]?pr[0]:p;
-        localStorage.removeItem('pending_profile');
-      }
-    }catch(e){}
-  }
-  // se ainda não tem perfil, busca no banco
-  if(!userProfile){
-    const prof=await fetch(SB_URL+'/rest/v1/usuarios?id=eq.'+uid+'&select=*',{headers:{...H,'Authorization':'Bearer '+tk}}).then(r=>r.json());
-    if(Array.isArray(prof)&&prof[0]){userProfile=prof[0];}
-    else{const c=await fetch(SB_URL+'/rest/v1/usuarios',{method:'POST',headers:{...H,'Authorization':'Bearer '+tk,'Prefer':'return=representation'},body:JSON.stringify({id:uid,nome:email.split('@')[0],email,arma:'Geral',quartel_ou_forca:''})}).then(r=>r.json());userProfile=Array.isArray(c)&&c[0]?c[0]:{id:uid,nome:email.split('@')[0],email};}
-  }
+  if(pending){try{const p=JSON.parse(pending);if(p.email===email){const pr=await fetch(SB_URL+'/rest/v1/usuarios',{method:'POST',headers:{...H,'Authorization':'Bearer '+tk,'Prefer':'resolution=merge-duplicates,return=representation'},body:JSON.stringify({id:uid,nome:p.nome,email:p.email,arma:p.arma,quartel_ou_forca:p.quartel_ou_forca})}).then(r=>r.json());userProfile=Array.isArray(pr)&&pr[0]?pr[0]:p;localStorage.removeItem('pending_profile');}}catch(e){}}
+  if(!userProfile){const prof=await fetch(SB_URL+'/rest/v1/usuarios?id=eq.'+uid+'&select=*',{headers:{...H,'Authorization':'Bearer '+tk}}).then(r=>r.json());if(Array.isArray(prof)&&prof[0]){userProfile=prof[0];}else{const c=await fetch(SB_URL+'/rest/v1/usuarios',{method:'POST',headers:{...H,'Authorization':'Bearer '+tk,'Prefer':'return=representation'},body:JSON.stringify({id:uid,nome:email.split('@')[0],email,arma:'Outro',quartel_ou_forca:''})}).then(r=>r.json());userProfile=Array.isArray(c)&&c[0]?c[0]:{id:uid,nome:email.split('@')[0],email};}}
   toast('Bem-vindo, '+(userProfile?.nome||'soldado')+'! 🎖️');goPage('inicio');
 }
 async function fazerCadastro(){
@@ -514,31 +514,9 @@ async function fazerCadastro(){
   const res=await fetch(SB_URL+'/auth/v1/signup',{method:'POST',headers:H,body:JSON.stringify({email,password:senha})}).then(r=>r.json());
   btn.disabled=false;btn.textContent='Criar conta';
   if(res.error)return errEl.textContent=res.error.message||'Erro no cadastro.';
-  const uid=res.user?.id;
-  const tk=res.access_token;
-  if(tk&&uid){
-    // confirmação desativada — fluxo normal
-    sessionStorage.setItem('sb_token',tk);sessionStorage.setItem('sb_uid',uid);user={id:uid};
-    const pr=await fetch(SB_URL+'/rest/v1/usuarios',{method:'POST',headers:{...H,'Authorization':'Bearer '+tk,'Prefer':'return=representation'},body:JSON.stringify({id:uid,nome,email,arma,quartel_ou_forca:quartel})}).then(r=>r.json());
-    userProfile=Array.isArray(pr)&&pr[0]?pr[0]:{id:uid,nome,email,arma,quartel_ou_forca:quartel};
-    toast('Conta criada! 🎖️');goPage('inicio');
-  } else {
-    // confirmação ativada — salva dados localmente para usar no primeiro login
-    localStorage.setItem('pending_profile',JSON.stringify({nome,email,arma,quartel_ou_forca:quartel}));
-    document.getElementById('form-cadastro-wrap').innerHTML=`
-      <div style="text-align:center;padding:1rem 0">
-        <div style="font-size:2.5rem;margin-bottom:1rem">📧</div>
-        <h2 style="font-size:1.2rem;font-weight:600;margin-bottom:.75rem">Confirme seu email!</h2>
-        <p style="font-size:.9rem;color:var(--text-muted);line-height:1.6;margin-bottom:1.25rem">
-          Enviamos um email de confirmação para<br>
-          <strong style="color:var(--text)">${email}</strong><br><br>
-          Acesse sua caixa de entrada e clique no link para ativar sua conta.
-        </p>
-        <p style="font-size:.8rem;color:var(--text-muted)">Após confirmar, volte aqui e faça login normalmente.</p>
-        <button class="btn-login" style="margin-top:1.5rem" onclick="toggleForm(false)">Ir para o Login</button>
-      </div>
-    `;
-  }
+  const uid=res.user?.id,tk=res.access_token;
+  if(tk&&uid){sessionStorage.setItem('sb_token',tk);sessionStorage.setItem('sb_uid',uid);user={id:uid};const pr=await fetch(SB_URL+'/rest/v1/usuarios',{method:'POST',headers:{...H,'Authorization':'Bearer '+tk,'Prefer':'return=representation'},body:JSON.stringify({id:uid,nome,email,arma,quartel_ou_forca:quartel})}).then(r=>r.json());userProfile=Array.isArray(pr)&&pr[0]?pr[0]:{id:uid,nome,email,arma,quartel_ou_forca:quartel};toast('Conta criada! 🎖️');goPage('inicio');}
+  else{localStorage.setItem('pending_profile',JSON.stringify({nome,email,arma,quartel_ou_forca:quartel}));document.getElementById('form-cadastro-wrap').innerHTML=`<div style="text-align:center;padding:1rem 0"><div style="font-size:2.5rem;margin-bottom:1rem">📧</div><h2 style="font-size:1.2rem;font-weight:600;margin-bottom:.75rem">Confirme seu email!</h2><p style="font-size:.9rem;color:var(--text-muted);line-height:1.6;margin-bottom:1.25rem">Enviamos um email para<br><strong style="color:var(--text)">${email}</strong><br><br>Acesse sua caixa e clique no link para ativar.</p><button class="btn-login" style="margin-top:1rem" onclick="toggleForm(false)">Ir para o Login</button></div>`;}
 }
 function toggleForm(c){document.getElementById('form-login-wrap').style.display=c?'none':'block';document.getElementById('form-cadastro-wrap').style.display=c?'block':'none';}
 async function sair(){sessionStorage.removeItem('sb_token');sessionStorage.removeItem('sb_uid');user=null;userProfile=null;favIds=new Set();toast('Até a próxima! 🎖️');goPage('inicio');}
@@ -646,41 +624,56 @@ function openDetalhe(id){
   document.getElementById('det-letra').innerHTML=s.letra.split('\n').map(l=>`<p>${l||'&nbsp;'}</p>`).join('');
   const btn=document.getElementById('btn-lock');
   btn.classList.remove('locked');btn.innerHTML=SVG_OPEN;
-  const md=document.getElementById('modal-detalhe');
-  md.classList.remove('leitura','locked');
   document.getElementById('det-meta-wrap').style.display='';
   document.getElementById('det-titulo').style.display='';
-  md.classList.add('open');
+  document.getElementById('modal-detalhe').classList.add('open');
+  document.body.style.overflow='hidden';
 }
 function closeDetalhe(){
-  const md=document.getElementById('modal-detalhe');
-  md.classList.remove('open','leitura','locked');
+  document.getElementById('modal-detalhe').classList.remove('open');
   document.getElementById('btn-lock').classList.remove('locked');
   document.getElementById('btn-lock').innerHTML=SVG_OPEN;
-  document.getElementById('det-meta-wrap').style.display='';
-  document.getElementById('det-titulo').style.display='';
+  document.body.style.overflow='';
 }
+
+// ── MODO LEITURA (página separada) ──
+let leituraLocked=false;
+
 function toggleLock(){
-  const md=document.getElementById('modal-detalhe');
-  const btn=document.getElementById('btn-lock');
-  const btnFechar=document.getElementById('btn-fechar');
-  const isLocked=btn.classList.contains('locked');
-  if(isLocked){
-    btn.classList.remove('locked');btn.innerHTML=SVG_OPEN;
-    md.classList.remove('leitura','locked');
-    document.getElementById('det-meta-wrap').style.display='';
-    document.getElementById('det-titulo').style.display='';
-    btnFechar.disabled=false;
-    btnFechar.style.opacity='1';
-    btnFechar.style.pointerEvents='auto';
+  const letra=document.getElementById('det-letra').innerHTML;
+  document.getElementById('leitura-lyrics').innerHTML=letra;
+  document.getElementById('leitura-scroll').scrollTop=0;
+  leituraLocked=false;
+  // reset ícone cadeado
+  document.getElementById('leitura-lock-btn').innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>`;
+  document.getElementById('leitura-lock-btn').style.color='';
+  document.getElementById('leitura-scroll').style.pointerEvents='';
+  document.getElementById('btn-fechar-leitura').style.pointerEvents='';
+  document.getElementById('btn-fechar-leitura').style.opacity='';
+  document.getElementById('leitura-page').classList.add('active');
+}
+
+function closeLeitura(){
+  document.getElementById('leitura-page').classList.remove('active');
+  leituraLocked=false;
+}
+
+function toggleLeituraLock(){
+  leituraLocked=!leituraLocked;
+  const btn=document.getElementById('leitura-lock-btn');
+  const fechar=document.getElementById('btn-fechar-leitura');
+  if(leituraLocked){
+    btn.innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
+    btn.style.color='var(--green)';
+    document.getElementById('leitura-scroll').style.pointerEvents='none';
+    fechar.style.pointerEvents='none';
+    fechar.style.opacity='0.2';
   } else {
-    btn.classList.add('locked');btn.innerHTML=SVG_CLOSED;
-    md.classList.add('leitura','locked');
-    document.getElementById('det-meta-wrap').style.display='none';
-    document.getElementById('det-titulo').style.display='none';
-    btnFechar.disabled=true;
-    btnFechar.style.opacity='0.2';
-    btnFechar.style.pointerEvents='none';
+    btn.innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>`;
+    btn.style.color='';
+    document.getElementById('leitura-scroll').style.pointerEvents='';
+    fechar.style.pointerEvents='';
+    fechar.style.opacity='';
   }
 }
 
@@ -689,27 +682,12 @@ function openModal(id){
   if(!sessionStorage.getItem('sb_token')){toast('Faça login primeiro!');goPage('login');return;}
   editingId=id||null;
   document.getElementById('err-modal').textContent='';
-  if(id){
-    const s=allPublic.find(x=>x.id===id)||detalheMap[id];
-    document.getElementById('modal-title').textContent='Editar Canção';
-    document.getElementById('f-titulo').value=s?.titulo||'';
-    document.getElementById('modal-cat').value=s?.categoria||'Infantaria';
-    document.getElementById('f-letra').value=s?.letra||'';
-    document.getElementById('f-vis').value=s?.visibilidade||'public';
-  } else {
-    document.getElementById('modal-title').textContent='Nova Canção';
-    ['f-titulo','f-letra'].forEach(i=>document.getElementById(i).value='');
-    document.getElementById('modal-cat').value='Infantaria';
-    document.getElementById('f-vis').value='public';
-  }
+  if(id){const s=allPublic.find(x=>x.id===id)||detalheMap[id];document.getElementById('modal-title').textContent='Editar Canção';document.getElementById('f-titulo').value=s?.titulo||'';document.getElementById('modal-cat').value=s?.categoria||'Infantaria';document.getElementById('f-letra').value=s?.letra||'';document.getElementById('f-vis').value=s?.visibilidade||'public';}
+  else{document.getElementById('modal-title').textContent='Nova Canção';['f-titulo','f-letra'].forEach(i=>document.getElementById(i).value='');document.getElementById('modal-cat').value='Infantaria';document.getElementById('f-vis').value='public';}
   document.getElementById('modal-criar').classList.add('open');
 }
 function closeModal(){document.getElementById('modal-criar').classList.remove('open');}
-async function editSong(id){
-  const tk=sessionStorage.getItem('sb_token');
-  const data=await fetch(SB_URL+'/rest/v1/cancoes?id=eq.'+id,{headers:{...H,'Authorization':'Bearer '+tk}}).then(r=>r.json());
-  if(data[0])detalheMap[id]=data[0];openModal(id);
-}
+async function editSong(id){const tk=sessionStorage.getItem('sb_token');const data=await fetch(SB_URL+'/rest/v1/cancoes?id=eq.'+id,{headers:{...H,'Authorization':'Bearer '+tk}}).then(r=>r.json());if(data[0])detalheMap[id]=data[0];openModal(id);}
 async function deleteSong(id){
   if(!confirm('Excluir esta canção?'))return;
   const tk=sessionStorage.getItem('sb_token');
@@ -720,13 +698,13 @@ async function salvar(){
   const titulo=document.getElementById('f-titulo').value.trim(),cat=document.getElementById('modal-cat').value,letra=document.getElementById('f-letra').value.trim(),vis=document.getElementById('f-vis').value;
   const err=document.getElementById('err-modal');err.textContent='';
   if(!titulo||!letra)return err.textContent='Preencha o título e a letra.';
-  if(titulo.length<3)return err.textContent='⚠️ Título muito curto. Mínimo 3 caracteres.';
+  if(titulo.length<3)return err.textContent='⚠️ Título muito curto.';
   if(palavraoIsolado(titulo))return err.textContent='⚠️ Título inválido.';
-  if(temSpam(titulo))return err.textContent='⚠️ Título inválido. Evite repetir caracteres ou palavras.';
+  if(temSpam(titulo))return err.textContent='⚠️ Evite repetir caracteres no título.';
   const linhas=letra.split('\n').filter(l=>l.trim().length>0);
-  if(linhas.length<3)return err.textContent='⚠️ A letra precisa ter pelo menos 3 linhas.';
-  if(letra.trim().length<20)return err.textContent='⚠️ Letra muito curta para ser uma canção.';
-  if(temSpam(letra))return err.textContent='⚠️ Letra inválida. Evite repetir caracteres, palavras ou linhas em excesso.';
+  if(linhas.length<3)return err.textContent='⚠️ Mínimo 3 linhas na letra.';
+  if(letra.trim().length<20)return err.textContent='⚠️ Letra muito curta.';
+  if(temSpam(letra))return err.textContent='⚠️ Evite repetir caracteres ou linhas na letra.';
   if(palavraoExcessivo(letra))return err.textContent='⚠️ Linguagem excessivamente inadequada.';
   const btn=document.getElementById('btn-salvar');btn.disabled=true;btn.textContent='Salvando...';
   const tk=sessionStorage.getItem('sb_token'),uid=sessionStorage.getItem('sb_uid');
