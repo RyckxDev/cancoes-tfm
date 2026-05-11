@@ -17,8 +17,6 @@
 html{height:100%}
 body{font-family:'Segoe UI',system-ui,sans-serif;color:#1a1a1a;background:#fff;min-height:100%;overflow-x:hidden}
 :root{--green:#4a6741;--green-light:#6b8f62;--green-pale:#f0f4ef;--green-border:#c8d8c5;--text:#1a1a1a;--text-muted:#666;--bg:#fff;--border:#e0e0e0;--radius:12px}
-
-/* NAV */
 nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:60px;border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:100}
 .nav-left{display:flex;align-items:center;gap:10px}
 .nav-logo{display:flex;align-items:center;gap:8px;font-size:1.25rem;font-weight:600;color:var(--green);cursor:pointer;white-space:nowrap}
@@ -29,15 +27,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .btn-icon,.btn-new{background:none;border:none;cursor:pointer;padding:6px;color:var(--text);display:flex;align-items:center;justify-content:center;transition:opacity .2s}
 .btn-icon:hover,.btn-new:hover{opacity:.6}
 .btn-icon svg,.btn-new svg{width:26px;height:26px}
-
-/* HAMBURGUER */
 .hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;color:var(--text)}
 .hamburger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:all .3s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-/* MENU LATERAL */
 .side-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:300}
 .side-overlay.open{display:block}
 .side-menu{position:fixed;top:0;left:-100%;width:75vw;max-width:270px;height:100vh;background:#fff;border-right:1px solid var(--border);z-index:301;transition:left .28s cubic-bezier(.4,0,.2,1);padding:1.5rem 1rem;display:flex;flex-direction:column;gap:4px;box-shadow:6px 0 24px rgba(0,0,0,.1)}
@@ -47,8 +41,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .side-item:hover{background:var(--green-pale);color:var(--green)}
 .side-item.active{background:var(--green-pale);color:var(--green);font-weight:600}
 .side-divider{height:1px;background:var(--border);margin:.5rem 0}
-
-/* PAGES */
 .page{display:none;padding:2.5rem;overflow-x:hidden}
 .page.active{display:block}
 .hero{max-width:700px;margin:0 auto 2rem}
@@ -77,8 +69,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .privacy-badge{font-size:.7rem;padding:2px 7px;border-radius:20px;font-weight:500}
 .public-badge{background:#e8f5e9;color:#2e7d32}
 .private-badge{background:#fff3e0;color:#e65100}
-
-/* MODAIS */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:center;justify-content:center}
 .modal-overlay.open{display:flex}
 .modal{background:#fff;border-radius:var(--radius);padding:2rem;width:100%;max-width:520px;max-height:85vh;overflow-y:auto;overflow-x:hidden;position:relative}
@@ -91,8 +81,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .btn-save{background:var(--green);color:#fff;border:none;border-radius:8px;padding:7px 20px;font-size:.875rem;font-weight:500;cursor:pointer}
 .btn-save:hover{background:var(--green-light)}
 .btn-save:disabled{opacity:.5;cursor:not-allowed}
-
-/* MODAL DETALHE */
 .det-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
 .det-topbar button{background:none;border:none;cursor:pointer;color:var(--text-muted);width:28px;height:28px;display:flex;align-items:center;justify-content:center;padding:0}
 .det-topbar button:hover{color:var(--text)}
@@ -102,59 +90,14 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .detail-lyrics{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#000;background:#fff;letter-spacing:1.5px;padding:.5rem 0;word-break:break-word;overflow-wrap:break-word}
 .detail-lyrics p{margin:0;line-height:1.5;white-space:normal}
 .detail-lyrics p+p{margin-top:.9rem}
-
-/* ══════════════════════════════
-   MODO LEITURA — página separada
-   ══════════════════════════════ */
-#leitura-page{
-  display:none;
-  position:fixed;
-  top:0;left:0;right:0;bottom:0;
-  z-index:9999;
-  background:#fff;
-  /* NÃO TEM overflow aqui — o scroll fica no filho */
-}
+#leitura-page{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#fff}
 #leitura-page.active{display:flex;flex-direction:column}
-
-#leitura-topbar{
-  flex-shrink:0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:.875rem 1rem;
-  background:#fff;
-  border-bottom:1px solid #e0e0e0;
-}
-#leitura-topbar button{
-  background:none;border:none;cursor:pointer;
-  color:#666;
-  width:32px;height:32px;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-}
-
-/* Este é o único elemento com overflow — filho direto do flex */
-#leitura-scroll{
-  flex:1 1 0;
-  min-height:0; /* CRÍTICO para flex+scroll funcionar */
-  overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
-  padding:1.25rem;
-}
-
-#leitura-lyrics{
-  font-family:'Montserrat',sans-serif;
-  font-size:1.3rem;
-  font-weight:800;
-  color:#000;
-  letter-spacing:2px;
-  word-break:break-word;
-  padding-bottom:4rem;
-}
+#leitura-topbar{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:.875rem 1rem;background:#fff;border-bottom:1px solid #e0e0e0}
+#leitura-topbar button{background:none;border:none;cursor:pointer;color:#666;width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+#leitura-scroll{flex:1 1 0;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:1.25rem}
+#leitura-lyrics{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:800;color:#000;letter-spacing:2px;word-break:break-word;padding-bottom:4rem}
 #leitura-lyrics p{margin:0;line-height:1.5}
 #leitura-lyrics p+p{margin-top:1.2rem}
-
-/* PERFIL */
 .profile-header{display:flex;align-items:center;gap:1.25rem;margin-bottom:2rem}
 .avatar{width:56px;height:56px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:600}
 .profile-info h2{font-size:1.1rem;font-weight:600}
@@ -165,8 +108,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .stat span{font-size:.8rem;color:var(--text-muted)}
 .btn-sair{background:none;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:.8rem;cursor:pointer;color:var(--text-muted)}
 .btn-sair:hover{border-color:red;color:red}
-
-/* LOGIN */
 .login-wrap{max-width:380px;margin:3rem auto;border:1px solid var(--border);border-radius:var(--radius);padding:2rem}
 .login-wrap h2{font-size:1.3rem;font-weight:600;margin-bottom:.5rem;text-align:center}
 .login-wrap .subtitle{font-size:.85rem;color:var(--text-muted);text-align:center;margin-bottom:1.5rem}
@@ -177,15 +118,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .btn-login:disabled{opacity:.5;cursor:not-allowed}
 .login-toggle{text-align:center;margin-top:1rem;font-size:.85rem;color:var(--text-muted)}
 .login-toggle a{color:var(--green);cursor:pointer;font-weight:500}
-
-/* MISC */
 .empty{text-align:center;padding:3rem;color:var(--text-muted);font-size:.9rem}
 .toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:10px 20px;border-radius:8px;font-size:.875rem;z-index:99999;opacity:0;transition:opacity .3s;pointer-events:none}
 .toast.show{opacity:1}
 .loading{text-align:center;padding:2rem;color:var(--text-muted);font-size:.875rem}
 .err{color:#c0392b;font-size:.8rem;margin-top:.5rem;text-align:center}
-
-/* RESPONSIVO */
 @media(max-width:640px){
   nav{padding:0 1rem;height:56px}
   .nav-links{display:none}
@@ -205,19 +142,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-left">
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
     <div class="nav-logo" onclick="goPage('inicio')">
-      <svg width="24" height="16" viewBox="0 0 26 18" xmlns="http://www.w3.org/2000/svg">
-        <rect width="26" height="18" fill="#009B3A"/>
-        <polygon points="13,1.5 24.5,9 13,16.5 1.5,9" fill="#FEDF00"/>
-        <circle cx="13" cy="9" r="3.8" fill="#002776"/>
-        <path d="M9.4,7.7 Q13,6.5 16.6,7.7" stroke="#fff" stroke-width="0.7" fill="none"/>
-      </svg>
+      <svg width="24" height="16" viewBox="0 0 26 18" xmlns="http://www.w3.org/2000/svg"><rect width="26" height="18" fill="#009B3A"/><polygon points="13,1.5 24.5,9 13,16.5 1.5,9" fill="#FEDF00"/><circle cx="13" cy="9" r="3.8" fill="#002776"/><path d="M9.4,7.7 Q13,6.5 16.6,7.7" stroke="#fff" stroke-width="0.7" fill="none"/></svg>
       Canções de TFM
     </div>
   </div>
@@ -227,54 +156,26 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
     <a onclick="goPage('favoritos')" id="link-favoritos">Favoritos</a>
   </div>
   <div class="nav-actions">
-    <button class="btn-new" onclick="openModal()" title="Nova Canção">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-    </button>
-    <button class="btn-icon" onclick="goPage('favoritos')" title="Favoritos">
-      <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-    </button>
-    <button class="btn-icon" onclick="goPage('perfil')" title="Perfil">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </button>
+    <button class="btn-new" onclick="openModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></button>
+    <button class="btn-icon" onclick="goPage('favoritos')"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button>
+    <button class="btn-icon" onclick="goPage('perfil')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></button>
   </div>
 </nav>
 
-<!-- MENU LATERAL -->
 <div class="side-overlay" id="side-overlay" onclick="closeMenu()"></div>
 <div class="side-menu" id="side-menu">
   <div class="side-logo">
-    <svg width="22" height="15" viewBox="0 0 26 18" xmlns="http://www.w3.org/2000/svg">
-      <rect width="26" height="18" fill="#009B3A"/>
-      <polygon points="13,1.5 24.5,9 13,16.5 1.5,9" fill="#FEDF00"/>
-      <circle cx="13" cy="9" r="3.8" fill="#002776"/>
-      <path d="M9.4,7.7 Q13,6.5 16.6,7.7" stroke="#fff" stroke-width="0.7" fill="none"/>
-    </svg>
+    <svg width="22" height="15" viewBox="0 0 26 18" xmlns="http://www.w3.org/2000/svg"><rect width="26" height="18" fill="#009B3A"/><polygon points="13,1.5 24.5,9 13,16.5 1.5,9" fill="#FEDF00"/><circle cx="13" cy="9" r="3.8" fill="#002776"/><path d="M9.4,7.7 Q13,6.5 16.6,7.7" stroke="#fff" stroke-width="0.7" fill="none"/></svg>
     Canções de TFM
   </div>
-  <button class="side-item active" id="side-inicio" onclick="menuGoPage('inicio')">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-    Início
-  </button>
-  <button class="side-item" id="side-criados" onclick="menuGoPage('criados')">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-    Criados
-  </button>
-  <button class="side-item" id="side-favoritos" onclick="menuGoPage('favoritos')">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-    Favoritos
-  </button>
+  <button class="side-item active" id="side-inicio" onclick="menuGoPage('inicio')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Início</button>
+  <button class="side-item" id="side-criados" onclick="menuGoPage('criados')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Criados</button>
+  <button class="side-item" id="side-favoritos" onclick="menuGoPage('favoritos')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Favoritos</button>
   <div class="side-divider"></div>
-  <button class="side-item" id="side-perfil" onclick="menuGoPage('perfil')">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    Perfil
-  </button>
-  <button class="side-item" onclick="openModal();closeMenu()">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-    Nova Canção
-  </button>
+  <button class="side-item" id="side-perfil" onclick="menuGoPage('perfil')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>Perfil</button>
+  <button class="side-item" onclick="openModal();closeMenu()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>Nova Canção</button>
 </div>
 
-<!-- INÍCIO -->
 <div class="page active" id="page-inicio">
   <div class="hero">
     <div class="hero-tag">Utilidades</div>
@@ -288,20 +189,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
   <div class="toolbar">
     <select id="filtro-inicio" onchange="filtrarInicio()">
       <option value="">☰ Todos</option>
-      <optgroup label="🪖 Exército">
-        <option value="Infantaria">🔫 Infantaria</option><option value="Artilharia">💥 Artilharia</option>
-        <option value="Cavalaria">🐴 Cavalaria</option><option value="Comunicações">📡 Comunicações</option>
-        <option value="Engenharia">⚙️ Engenharia</option><option value="Aviação do Exército">🚁 Aviação do Exército</option>
-        <option value="Comandos">🗡️ Comandos</option><option value="PQD">🪂 PQD</option>
-        <option value="Montanha">⛰️ Montanha</option><option value="Caatinga">🌵 Caatinga</option>
-        <option value="Pantanal">🌿 Pantanal</option><option value="CFC">🎓 CFC</option>
-      </optgroup>
-      <optgroup label="⚓ Marinha">
-        <option value="Marinha">⚓ Marinha</option><option value="Fuzileiros Navais">🌊 Fuzileiros Navais</option>
-      </optgroup>
-      <optgroup label="✈️ Força Aérea">
-        <option value="Força Aérea">✈️ Força Aérea Brasileira (FAB)</option>
-      </optgroup>
+      <optgroup label="🪖 Exército"><option value="Infantaria">🔫 Infantaria</option><option value="Artilharia">💥 Artilharia</option><option value="Cavalaria">🐴 Cavalaria</option><option value="Comunicações">📡 Comunicações</option><option value="Engenharia">⚙️ Engenharia</option><option value="Aviação do Exército">🚁 Aviação do Exército</option><option value="Comandos">🗡️ Comandos</option><option value="PQD">🪂 PQD</option><option value="Montanha">⛰️ Montanha</option><option value="Caatinga">🌵 Caatinga</option><option value="Pantanal">🌿 Pantanal</option><option value="CFC">🎓 CFC</option></optgroup>
+      <optgroup label="⚓ Marinha"><option value="Marinha">⚓ Marinha</option><option value="Fuzileiros Navais">🌊 Fuzileiros Navais</option></optgroup>
+      <optgroup label="✈️ Força Aérea"><option value="Força Aérea">✈️ Força Aérea Brasileira (FAB)</option></optgroup>
       <option value="Saca">🍺 Saca</option>
       <option value="Geral">🎖️ Geral</option>
     </select>
@@ -311,7 +201,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
   <div id="loading-inicio" class="loading">Carregando canções...</div>
 </div>
 
-<!-- CRIADOS -->
 <div class="page" id="page-criados">
   <div class="hero"><h1>Minhas Canções</h1><p>Canções que você criou.</p></div>
   <div id="grid-criados" class="grid"></div>
@@ -319,26 +208,17 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
   <div class="empty" id="empty-criados" style="display:none">Você ainda não criou nenhuma canção.<br><br><button class="btn-save" onclick="openModal()">+ Nova Canção</button></div>
 </div>
 
-<!-- FAVORITOS -->
 <div class="page" id="page-favoritos">
   <div class="hero"><h1>Favoritas</h1><p>Canções que você marcou como favorita.</p></div>
   <div id="grid-favoritos" class="grid"></div>
   <div class="empty" id="empty-favoritos" style="display:none">Você não favoritou nenhuma canção ainda.</div>
 </div>
 
-<!-- PERFIL -->
 <div class="page" id="page-perfil">
   <div style="max-width:700px;margin:0 auto">
     <div id="perfil-logado" style="display:none">
-      <div class="profile-header">
-        <div class="avatar" id="avatar-initials">?</div>
-        <div class="profile-info"><h2 id="profile-name">—</h2><p id="profile-sub">—</p></div>
-      </div>
-      <div class="stats">
-        <div class="stat"><strong id="stat-criadas">0</strong><span>Criadas</span></div>
-        <div class="stat"><strong id="stat-publicas">0</strong><span>Públicas</span></div>
-        <div class="stat"><strong id="stat-favs">0</strong><span>Favoritas</span></div>
-      </div>
+      <div class="profile-header"><div class="avatar" id="avatar-initials">?</div><div class="profile-info"><h2 id="profile-name">—</h2><p id="profile-sub">—</p></div></div>
+      <div class="stats"><div class="stat"><strong id="stat-criadas">0</strong><span>Criadas</span></div><div class="stat"><strong id="stat-publicas">0</strong><span>Públicas</span></div><div class="stat"><strong id="stat-favs">0</strong><span>Favoritas</span></div></div>
       <button class="btn-sair" onclick="sair()">Sair da conta</button>
     </div>
     <div id="perfil-completar" style="display:none;max-width:380px">
@@ -358,14 +238,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
       <div class="err" id="err-completar"></div>
       <button class="btn-save" onclick="completarPerfil()" style="width:100%;padding:10px">Salvar perfil</button>
     </div>
-    <div id="perfil-deslogado">
-      <p style="color:var(--text-muted);margin-bottom:1rem">Faça login para ver seu perfil.</p>
-      <button class="btn-save" onclick="goPage('login')">Entrar</button>
-    </div>
+    <div id="perfil-deslogado"><p style="color:var(--text-muted);margin-bottom:1rem">Faça login para ver seu perfil.</p><button class="btn-save" onclick="goPage('login')">Entrar</button></div>
   </div>
 </div>
 
-<!-- LOGIN -->
 <div class="page" id="page-login">
   <div class="login-wrap" id="form-login-wrap">
     <h2>Bem-vindo 🎖️</h2><p class="subtitle">Entre na sua conta.</p>
@@ -394,7 +270,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
   </div>
 </div>
 
-<!-- MODAL CRIAR/EDITAR -->
 <div class="modal-overlay" id="modal-criar">
   <div class="modal">
     <h2 id="modal-title" style="margin-bottom:1.25rem">Nova Canção</h2>
@@ -418,40 +293,24 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
   </div>
 </div>
 
-<!-- MODAL DETALHE -->
 <div class="modal-overlay" id="modal-detalhe">
   <div class="modal">
     <div class="det-topbar">
-      <button id="btn-fechar" onclick="closeDetalhe()">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <button id="btn-lock" onclick="toggleLock()">
-        <svg id="lock-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-      </button>
+      <button id="btn-fechar" onclick="closeDetalhe()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <button id="btn-lock" onclick="toggleLock()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></button>
     </div>
-    <div class="detail-meta" id="det-meta-wrap">
-      <span id="det-author"></span>
-      <span id="det-tag"></span>
-      <span id="det-privacy"></span>
-    </div>
+    <div class="detail-meta" id="det-meta-wrap"><span id="det-author"></span><span id="det-tag"></span><span id="det-privacy"></span></div>
     <h2 id="det-titulo" style="margin-bottom:1rem"></h2>
     <div class="detail-lyrics" id="det-letra"></div>
   </div>
 </div>
 
-<!-- MODO LEITURA (página separada, fora de qualquer modal) -->
 <div id="leitura-page">
   <div id="leitura-topbar">
-    <button id="btn-fechar-leitura" onclick="closeLeitura()">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <button id="leitura-lock-btn" onclick="toggleLeituraLock()">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-    </button>
+    <button id="btn-fechar-leitura" onclick="closeLeitura()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <button id="leitura-lock-btn" onclick="toggleLeituraLock()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></button>
   </div>
-  <div id="leitura-scroll">
-    <div id="leitura-lyrics"></div>
-  </div>
+  <div id="leitura-scroll"><div id="leitura-lyrics"></div></div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -462,41 +321,39 @@ const SB_KEY='sb_publishable_B8I9JWO71LYWYW0FZkR67A_4SgHTit4';
 const H={'Content-Type':'application/json','apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY};
 let user=null,userProfile=null,favIds=new Set(),editingId=null,allPublic=[],detalheMap={};
 
-const SVG_OPEN=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>`;
-const SVG_CLOSED=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
+const SVG_LOCK_OPEN=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>`;
+const SVG_LOCK_CLOSED=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
+
+const CAT_EMOJI={'Infantaria':'🔫','Artilharia':'💥','Cavalaria':'🐴','Comunicações':'📡','Engenharia':'⚙️','Aviação do Exército':'🚁','Comandos':'🗡️','PQD':'🪂','Montanha':'⛰️','Caatinga':'🌵','Pantanal':'🌿','CFC':'🎓','Marinha':'⚓','Fuzileiros Navais':'🌊','Força Aérea':'✈️','Saca':'🍺','Geral':'🎖️'};
+function catLabel(c){const e=CAT_EMOJI[c];return e?e+' '+c:c||'🎖️ Geral';}
 
 const PALAVROES=['porra','merda','caralho','puta','viado','buceta','fdp','filho da puta','vadia','arrombado','otario','otário','corno','punheta','piroca','xoxota','cacete'];
 function palavraoIsolado(t){const s=t.toLowerCase().trim();return PALAVROES.some(p=>s===p||s===p+'!'||s===p+'.'||s===p+'?')}
 function palavraoExcessivo(t){const s=t.toLowerCase();return PALAVROES.reduce((n,p)=>n+(s.match(new RegExp('\\b'+p.replace(/\s+/g,'\\s+')+'\\b','gi'))||[]).length,0)>5}
 function temSpam(texto){
-  // detecta caractere repetido mais de 6x seguidos (ex: AAAAAAA)
   if(/(.)\1{5,}/i.test(texto))return true;
-  // detecta palavra repetida mais de 5x — ignora palavras curtas (artigos, x2, etc)
   const palavras=texto.toLowerCase().split(/\s+/).filter(p=>p.length>3);
-  const freq={};
-  for(const p of palavras){freq[p]=(freq[p]||0)+1;}
+  const freq={};for(const p of palavras){freq[p]=(freq[p]||0)+1;}
   if(Object.values(freq).some(v=>v>5))return true;
-  // detecta linha idêntica repetida mais de 3x
   const linhas=texto.split('\n').map(l=>l.trim().toLowerCase()).filter(l=>l.length>3);
-  const freqL={};
-  for(const l of linhas){freqL[l]=(freqL[l]||0)+1;}
+  const freqL={};for(const l of linhas){freqL[l]=(freqL[l]||0)+1;}
   if(Object.values(freqL).some(v=>v>3))return true;
   return false;
 }
+function sanitizar(texto){const div=document.createElement('div');div.innerHTML=texto;return div.textContent||div.innerText||'';}
 function toast(msg,dur=2500){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),dur)}
 
-// ── MENU ──
 function toggleMenu(){document.getElementById('hamburger').classList.toggle('open');document.getElementById('side-menu').classList.toggle('open');document.getElementById('side-overlay').classList.toggle('open');}
 function closeMenu(){document.getElementById('hamburger').classList.remove('open');document.getElementById('side-menu').classList.remove('open');document.getElementById('side-overlay').classList.remove('open');}
 function menuGoPage(p){closeMenu();goPage(p);document.querySelectorAll('.side-item').forEach(a=>a.classList.remove('active'));const el=document.getElementById('side-'+p);if(el)el.classList.add('active');}
 
-// ── AUTH ──
 async function initAuth(){
   const tk=sessionStorage.getItem('sb_token'),uid=sessionStorage.getItem('sb_uid');
   if(!tk||!uid)return;
   const res=await fetch(SB_URL+'/rest/v1/usuarios?id=eq.'+uid+'&select=*',{headers:{...H,'Authorization':'Bearer '+tk}}).then(r=>r.json());
   if(res&&res[0]){user={id:uid};userProfile=res[0];}
 }
+
 async function fazerLogin(){
   const email=document.getElementById('l-email').value.trim(),senha=document.getElementById('l-senha').value;
   const errEl=document.getElementById('err-login');errEl.textContent='';
@@ -512,6 +369,7 @@ async function fazerLogin(){
   if(!userProfile){const prof=await fetch(SB_URL+'/rest/v1/usuarios?id=eq.'+uid+'&select=*',{headers:{...H,'Authorization':'Bearer '+tk}}).then(r=>r.json());if(Array.isArray(prof)&&prof[0]){userProfile=prof[0];}else{const c=await fetch(SB_URL+'/rest/v1/usuarios',{method:'POST',headers:{...H,'Authorization':'Bearer '+tk,'Prefer':'return=representation'},body:JSON.stringify({id:uid,nome:email.split('@')[0],email,arma:'Outro',quartel_ou_forca:''})}).then(r=>r.json());userProfile=Array.isArray(c)&&c[0]?c[0]:{id:uid,nome:email.split('@')[0],email};}}
   toast('Bem-vindo, '+(userProfile?.nome||'soldado')+'! 🎖️');goPage('inicio');
 }
+
 async function fazerCadastro(){
   const nome=document.getElementById('c-nome').value.trim(),email=document.getElementById('c-email').value.trim(),senha=document.getElementById('c-senha').value,arma=document.getElementById('c-arma').value,quartel=document.getElementById('c-quartel').value.trim();
   const errEl=document.getElementById('err-cadastro');errEl.textContent='';
@@ -525,6 +383,7 @@ async function fazerCadastro(){
   if(tk&&uid){sessionStorage.setItem('sb_token',tk);sessionStorage.setItem('sb_uid',uid);user={id:uid};const pr=await fetch(SB_URL+'/rest/v1/usuarios',{method:'POST',headers:{...H,'Authorization':'Bearer '+tk,'Prefer':'return=representation'},body:JSON.stringify({id:uid,nome,email,arma,quartel_ou_forca:quartel})}).then(r=>r.json());userProfile=Array.isArray(pr)&&pr[0]?pr[0]:{id:uid,nome,email,arma,quartel_ou_forca:quartel};toast('Conta criada! 🎖️');goPage('inicio');}
   else{localStorage.setItem('pending_profile',JSON.stringify({nome,email,arma,quartel_ou_forca:quartel}));document.getElementById('form-cadastro-wrap').innerHTML=`<div style="text-align:center;padding:1rem 0"><div style="font-size:2.5rem;margin-bottom:1rem">📧</div><h2 style="font-size:1.2rem;font-weight:600;margin-bottom:.75rem">Confirme seu email!</h2><p style="font-size:.9rem;color:var(--text-muted);line-height:1.6;margin-bottom:1.25rem">Enviamos um email para<br><strong style="color:var(--text)">${email}</strong><br><br>Acesse sua caixa e clique no link para ativar.</p><button class="btn-login" style="margin-top:1rem" onclick="toggleForm(false)">Ir para o Login</button></div>`;}
 }
+
 function toggleForm(c){document.getElementById('form-login-wrap').style.display=c?'none':'block';document.getElementById('form-cadastro-wrap').style.display=c?'block':'none';}
 async function sair(){sessionStorage.removeItem('sb_token');sessionStorage.removeItem('sb_uid');user=null;userProfile=null;favIds=new Set();toast('Até a próxima! 🎖️');goPage('inicio');}
 async function completarPerfil(){
@@ -537,7 +396,6 @@ async function completarPerfil(){
   toast('Perfil atualizado! 🎖️');renderPerfil();
 }
 
-// ── PAGES ──
 function goPage(p){
   if((p==='criados'||p==='perfil')&&!sessionStorage.getItem('sb_token')){toast('Faça login primeiro!');goPage('login');return;}
   document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
@@ -550,7 +408,6 @@ function goPage(p){
   if(p==='perfil')renderPerfil();
 }
 
-// ── CARDS ──
 function cardHTML(s){
   const isMine=user&&s.autor_id==user.id,isFav=favIds.has(s.id);
   const editBtn=isMine?`<button onclick="event.stopPropagation();editSong(${s.id})">✏️</button>`:'';
@@ -561,9 +418,10 @@ function cardHTML(s){
     <div class="card-actions">${privBadge}<button class="${isFav?'active':''}" onclick="event.stopPropagation();toggleFav(${s.id})">${isFav?'★':'☆'}</button>${editBtn}${delBtn}</div></div>
     <h2>${s.titulo}</h2>
     <div class="card-preview">${s.letra}</div>
-    <span class="card-tag">${s.categoria||'Geral'}</span>
+    <span class="card-tag">${catLabel(s.categoria)}</span>
   </div>`;
 }
+
 async function renderInicio(){
   document.getElementById('loading-inicio').style.display='block';
   document.getElementById('grid-inicio').innerHTML='';
@@ -620,17 +478,15 @@ function toggleFav(id){
   if(cur==='inicio')filtrarInicio();else if(cur==='favoritos')renderFavoritos();else if(cur==='criados')renderCriados();
 }
 
-// ── DETALHE ──
 function openDetalhe(id){
   const s=allPublic.find(x=>x.id===id)||detalheMap[id];
   if(!s)return;
   document.getElementById('det-author').textContent=s.autor_nome||'anônimo';
-  document.getElementById('det-tag').textContent=s.categoria||'Geral';
+  document.getElementById('det-tag').textContent=catLabel(s.categoria);
   document.getElementById('det-privacy').innerHTML=`<span class="privacy-badge ${s.visibilidade==='public'?'public-badge':'private-badge'}">${s.visibilidade==='public'?'Pública':'Privada'}</span>`;
   document.getElementById('det-titulo').textContent=s.titulo;
   document.getElementById('det-letra').innerHTML=s.letra.split('\n').map(l=>`<p>${l||'&nbsp;'}</p>`).join('');
-  const btn=document.getElementById('btn-lock');
-  btn.classList.remove('locked');btn.innerHTML=SVG_OPEN;
+  document.getElementById('btn-lock').innerHTML=SVG_LOCK_OPEN;
   document.getElementById('det-meta-wrap').style.display='';
   document.getElementById('det-titulo').style.display='';
   document.getElementById('modal-detalhe').classList.add('open');
@@ -638,45 +494,38 @@ function openDetalhe(id){
 }
 function closeDetalhe(){
   document.getElementById('modal-detalhe').classList.remove('open');
-  document.getElementById('btn-lock').classList.remove('locked');
-  document.getElementById('btn-lock').innerHTML=SVG_OPEN;
+  document.getElementById('btn-lock').innerHTML=SVG_LOCK_OPEN;
   document.body.style.overflow='';
 }
 
-// ── MODO LEITURA (página separada) ──
 let leituraLocked=false;
-
 function toggleLock(){
-  const letra=document.getElementById('det-letra').innerHTML;
-  document.getElementById('leitura-lyrics').innerHTML=letra;
+  document.getElementById('leitura-lyrics').innerHTML=document.getElementById('det-letra').innerHTML;
   document.getElementById('leitura-scroll').scrollTop=0;
   leituraLocked=false;
-  // reset ícone cadeado
-  document.getElementById('leitura-lock-btn').innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>`;
+  document.getElementById('leitura-lock-btn').innerHTML=SVG_LOCK_OPEN;
   document.getElementById('leitura-lock-btn').style.color='';
   document.getElementById('leitura-scroll').style.pointerEvents='';
   document.getElementById('btn-fechar-leitura').style.pointerEvents='';
   document.getElementById('btn-fechar-leitura').style.opacity='';
   document.getElementById('leitura-page').classList.add('active');
 }
-
 function closeLeitura(){
   document.getElementById('leitura-page').classList.remove('active');
   leituraLocked=false;
 }
-
 function toggleLeituraLock(){
   leituraLocked=!leituraLocked;
   const btn=document.getElementById('leitura-lock-btn');
   const fechar=document.getElementById('btn-fechar-leitura');
   if(leituraLocked){
-    btn.innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
+    btn.innerHTML=SVG_LOCK_CLOSED;
     btn.style.color='var(--green)';
     document.getElementById('leitura-scroll').style.pointerEvents='none';
     fechar.style.pointerEvents='none';
     fechar.style.opacity='0.2';
   } else {
-    btn.innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>`;
+    btn.innerHTML=SVG_LOCK_OPEN;
     btn.style.color='';
     document.getElementById('leitura-scroll').style.pointerEvents='';
     fechar.style.pointerEvents='';
@@ -684,7 +533,6 @@ function toggleLeituraLock(){
   }
 }
 
-// ── CRIAR/EDITAR ──
 function openModal(id){
   if(!sessionStorage.getItem('sb_token')){toast('Faça login primeiro!');goPage('login');return;}
   editingId=id||null;
@@ -705,6 +553,9 @@ async function salvar(){
   const titulo=document.getElementById('f-titulo').value.trim(),cat=document.getElementById('modal-cat').value,letra=document.getElementById('f-letra').value.trim(),vis=document.getElementById('f-vis').value;
   const err=document.getElementById('err-modal');err.textContent='';
   if(!titulo||!letra)return err.textContent='Preencha o título e a letra.';
+  const tituloLimpo=sanitizar(titulo);
+  const letraLimpa=sanitizar(letra);
+  if(tituloLimpo!==titulo||letraLimpa!==letra)return err.textContent='⚠️ Conteúdo inválido. Não é permitido HTML ou imagens na letra.';
   if(titulo.length<3)return err.textContent='⚠️ Título muito curto.';
   if(palavraoIsolado(titulo))return err.textContent='⚠️ Título inválido.';
   if(temSpam(titulo))return err.textContent='⚠️ Evite repetir caracteres no título.';
