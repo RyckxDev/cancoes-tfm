@@ -130,7 +130,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:10px 20px;border-radius:8px;font-size:.875rem;z-index:99999;opacity:0;transition:opacity .3s;pointer-events:none}
 .toast.show{opacity:1}
 .loading{text-align:center;padding:2rem;color:var(--text-muted);font-size:.875rem}
-.err{color:#c0392b;font-size:.8rem;margin-top:.5rem;text-align:center}
+footer{text-align:center;padding:1.5rem;font-size:.75rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+footer a{color:var(--green);text-decoration:none;font-weight:500}
+footer a:hover{text-decoration:underline}
 @media(max-width:640px){
   nav{padding:0 1rem;height:56px}
   .nav-links{display:none}
@@ -320,6 +322,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
   </div>
   <div id="leitura-scroll"><div id="leitura-lyrics"></div></div>
 </div>
+
+<footer>
+  Feito por <a href="https://github.com/RyckxDev" target="_blank">RyckxDev</a>
+</footer>
 
 <div class="toast" id="toast"></div>
 
